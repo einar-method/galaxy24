@@ -58,12 +58,45 @@ function App() {
 
   return (
     <main>
+      <div className="banner">
+        <div className="banner__slide">
+          <h1>#Galaxy 24!</h1>
+        </div>
+        <div className="banner__slide">
+          <h1>#Galaxy 24!</h1>
+        </div>
+      </div>
     <h1>{headerText}</h1>
     <ul>
       {countries.map((country) => (
         <li key={country.name}>{country.name}</li>
       ))}
     </ul>
+    <form name="world" method="POST" data-netlify="true">
+      <input type="hidden" name="subject" 
+      value="New entry for %{formName} (%{submissionId})" />
+      <p>
+        <label>Your Name: <input type="text" name="name" /></label>
+      </p>
+      <p>
+        <label>Your Email: <input type="email" name="email" /></label>
+      </p>
+      <p>
+        <label>System Name: <input type="text" name="star" /></label>
+      </p>
+      <p>
+        <label>Star Info: <textarea name="starDetails"></textarea></label>
+      </p>
+      <p>
+        <label>Details: <textarea name="details"></textarea></label>
+      </p>
+      <p>
+        <button type="submit">Send</button>
+      </p>
+    </form>
+
+    <ion-icon name="cloud-upload"></ion-icon>
+
     </main>
   );
 }

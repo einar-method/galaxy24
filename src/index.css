@@ -13,11 +13,17 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+* {
+  margin: 0;
+}
+
 #root {
-  width: 100%;
+  width: 100vw;
+  height: 100svh;
   margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  overflow-x: hidden;
+  /* padding: 2rem;
+  text-align: center; */
 }
 
 a {
@@ -35,10 +41,44 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  background-image: url(public/images/star-bg.webp);
 }
 
 main {
   width: 100%;
+}
+
+@keyframes slide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.banner {
+  /* width: 100%; */
+  overflow: hidden;
+  padding: 1rem 0;
+  white-space: nowrap;
+}
+
+.banner__slide {
+  display: inline-block;
+  width: 100%;
+  /* text-align: center; */
+
+  /* gap: 2rem; */
+  /* justify-content: space-around; */
+  /* text-align: left;
+  font-size: large; */
+  animation: 10s slide infinite linear;
+}
+
+.banner__slide h1 {
+  /* width: 500px; */
+  text-align: left;
 }
 
 h1 {
